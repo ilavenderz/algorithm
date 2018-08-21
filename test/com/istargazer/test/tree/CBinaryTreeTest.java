@@ -1,4 +1,7 @@
-package com.istargazer.algorithm.tree.binarytree;
+package com.istargazer.test.tree;
+
+import com.istargazer.algorithm.tree.binarytree.CBTNode;
+import com.istargazer.algorithm.tree.binarytree.CBinaryTree;
 
 public class CBinaryTreeTest {
     public static void main(String[] args) {
