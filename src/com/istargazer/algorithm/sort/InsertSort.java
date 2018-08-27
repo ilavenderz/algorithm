@@ -43,4 +43,31 @@ public class InsertSort {
             sortArr[sortedIndex + 1] = temp;
         }
     }
+
+    /**
+     * 希尔排序
+     * @param sortArr
+     * @param <T>
+     */
+    public static <T extends Comparable> void shellSort(T[] sortArr) {
+        int length = sortArr.length;
+        // gap为步长，每次减为原来的一半。
+        for(int gap = length / 2; gap > 0; gap /= 2) {
+            // 共gap个组，对每一组都执行直接插入排序
+            for(int i = 0; i < gap; i++) {
+                for (int j = i + gap; j < length; j += gap) {
+                    // 如果a[j] < a[j-gap]，则寻找a[j]位置，并将后面数据的位置都后移。
+                    if(0 > sortArr[j].compareTo(sortArr[j - gap])) {
+                        T temp = sortArr[j];
+                        int k = j - gap;
+                        while(k >= 0 && 0 < sortArr[k].compareTo(temp)) {
+                            sortArr[k + gap] = sortArr[k];
+                            k -= gap;
+                        }
+                        sortArr[k + gap] = temp;
+                    }
+                }
+            }
+        }
+    }
 }
