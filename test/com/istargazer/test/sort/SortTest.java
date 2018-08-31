@@ -1,5 +1,6 @@
 package com.istargazer.test.sort;
 
+import com.istargazer.algorithm.sort.ChooseSort;
 import com.istargazer.algorithm.sort.InsertSort;
 
 import java.util.Arrays;
@@ -11,7 +12,8 @@ public class SortTest {
         long start,end;
         start = System.currentTimeMillis();
         //InsertSort.baseSort(sortArr);
-        InsertSort.shellSort(sortArr);
+        //InsertSort.shellSort(sortArr);
+        ChooseSort.chooseSort(sortArr);
         end = System.currentTimeMillis();
         System.out.println(Arrays.toString(sortArr));
         System.out.println(start - end);
