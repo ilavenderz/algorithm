@@ -8,7 +8,7 @@ public class BlackHole {
 
     public static final long calcBlackHoleNumber(long number){
         Byte[] bytes = NumberUtils.splitNumber(number);
-
+        int size = bytes.length;
         // sort number
         ChooseSort.chooseSort(bytes);
         long min = createMinNumber(bytes);
@@ -17,7 +17,7 @@ public class BlackHole {
         long temp = 0;
         do{
             temp = result;
-            bytes = NumberUtils.splitNumber(result);
+            bytes = NumberUtils.splitNumber(result,size);
             ChooseSort.chooseSort(bytes);
             min = createMinNumber(bytes);
             max = createMaxNumber(bytes);
@@ -44,6 +44,6 @@ public class BlackHole {
     }
 
     public static void main(String[] args) {
-        System.out.println(BlackHole.calcBlackHoleNumber(1780));
+        System.out.println(BlackHole.calcBlackHoleNumber(100));
     }
 }
