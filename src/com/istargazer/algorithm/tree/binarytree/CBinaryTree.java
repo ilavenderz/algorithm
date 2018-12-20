@@ -2,8 +2,6 @@ package com.istargazer.algorithm.tree.binarytree;
 
 import com.istargazer.algorithm.tree.INodeProcess;
 import com.istargazer.algorithm.tree.ITree;
-import com.istargazer.algorithm.tree.Node;
-import javafx.scene.control.cell.CheckBoxTableCellBuilder;
 
 public class CBinaryTree implements ITree<CBTNode> {
 
